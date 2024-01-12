@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import StarPyramid from "./starPyramid";
+import './patternPrint.css';
 function PatternPrint(){
     const [rows, setRows]=useState();
     const changePattern=(evt)=>{
@@ -8,9 +9,13 @@ function PatternPrint(){
     }
     return(
         <div>
-            <label>Number of Rows</label>
-            <input type="text" value={rows} onChange={changePattern}/>
-            <StarPyramid rows={rows}/>
+            <div>
+                <label>Number of Rows</label>
+                <input type="text" value={rows} onChange={changePattern}/>
+            </div>
+            <div className="pattern">
+                <StarPyramid  rows={rows}/>
+            </div> 
         </div>
     );
 }
