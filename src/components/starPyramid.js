@@ -1,4 +1,5 @@
 import React from "react";
+import './starPyramid.css';
 function StarPyramid(props){
     const{
         rows
@@ -16,11 +17,12 @@ function StarPyramid(props){
             //         row.push('*');
             //     }
             // }
-            for(let j=1;j<=rows-i;j++){
-                row.push(<span>&nbsp;</span>);
+            for(let j=1;j<=rows-i+1;j++){
+                row.push(<span key={`space-${j}`} className="space"></span>);
             }
             for(let k=1; k<=(2*i-1); k++){
-                row.push('*');
+             //   row.push('*');
+                row.push(<span key={`space-${k}`}>*</span>);
             }
             pyramid.push(row);
         }
